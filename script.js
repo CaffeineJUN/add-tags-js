@@ -13,6 +13,12 @@ function createTag() {
         })
 }
 
+function remove(element, tag) {
+    let index = tags.indexOf(tag)
+    tags = [...tags.slice(0, index), ...tags.slice(index + 1)]
+    element.parentElement.remove()
+}
+
 function addTag(e) {
     if (e.key == 'Enter') {
         let tag = e.target.value.replace(/\s+/g, ' ')
